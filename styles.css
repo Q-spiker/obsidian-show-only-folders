@@ -1,0 +1,64 @@
+/* Show Only Folders — 样式全部使用 Obsidian 官方 CSS 变量，自动适配亮/暗主题 */
+
+/* 悬停显示的 Show only 星标 */
+.nav-folder-title {
+  position: relative;
+}
+
+.nav-folder-title .snfo-star {
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  padding: 2px;
+  border-radius: var(--radius-s);
+  color: var(--text-faint);
+  opacity: 0;
+  cursor: pointer;
+  transition: opacity 120ms ease-in-out;
+}
+
+.nav-folder-title:hover .snfo-star {
+  opacity: 0.6;
+}
+
+.nav-folder-title .snfo-star:hover {
+  opacity: 1;
+  color: var(--text-accent);
+  background-color: var(--background-modifier-hover);
+}
+
+/* 已选中状态：常亮 */
+.nav-folder-title .snfo-star.snfo-on {
+  opacity: 1;
+  color: var(--text-accent);
+}
+
+.nav-folder-title .snfo-star svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* 给星标留出位置，避免遮挡文件夹名 */
+.nav-folder-title .nav-folder-title-content {
+  margin-right: 20px;
+}
+
+/* 过滤模式下隐藏未命中的条目 */
+.snfo-hide {
+  display: none !important;
+}
+
+/* 顶部过滤按钮：让面板头部图标常显（不依赖悬停），并标明激活态 */
+.workspace-leaf .nav-action-button.snfo-btn-on {
+  color: var(--text-accent);
+  background-color: var(--background-modifier-hover);
+}
+
+/* Ribbon 栏图标的激活态 */
+.side-dock-ribbon .clickable-icon.snfo-btn-on {
+  color: var(--text-accent);
+  background-color: var(--background-modifier-hover);
+}

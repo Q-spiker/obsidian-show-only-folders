@@ -1,0 +1,26 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "*"
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Package plugin
+        run: |
+          mkdir -p show-only-folders
+          cp manifest.json main.js styles.css show-only-folders/
+          zip -r show-only-folders.zip show-only-folders
+
+      - name: Create release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: show-only-folders.zip
+          generate_release_notes: true

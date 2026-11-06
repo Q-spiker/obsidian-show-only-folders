@@ -1,0 +1,9 @@
+{
+  "id": "show-only-folders",
+  "name": "Show Only Folders",
+  "version": "1.1.0",
+  "minAppVersion": "1.4.0",
+  "description": "Star folders in the file explorer and show only the selected subtrees.",
+  "author": "WorkBuddy",
+  "isDesktopOnly": false
+}
